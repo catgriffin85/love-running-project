@@ -1,5 +1,4 @@
 /* Google fonts import */
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
@@ -8,8 +7,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-
 
 /* General styles */
 body {
@@ -21,7 +18,9 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -31,7 +30,6 @@ h1, h2, h3 {
 .hidden-heading {
     display: none;
 }
-
 
 /* Header */
 header {
@@ -57,7 +55,7 @@ header a {
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -66,7 +64,6 @@ header a {
 }
 
 /* Navbar styles with dropdown toggle */
-
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -91,7 +88,6 @@ nav {
     font-size: 2rem;
 }
 
-
 /* Main content */
 main {
     /* Make main element take up any surplus space to push footer down */
@@ -99,7 +95,7 @@ main {
     margin-top: 47px;
 }
 
-/* hero section */
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
@@ -108,7 +104,7 @@ main {
 }
 
 #cover-text {
-    /* final rgba value sets the opacity so it is semi-transparent */
+    /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
@@ -119,7 +115,8 @@ main {
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
@@ -135,8 +132,8 @@ main {
     font-size: 280%;
 }
 
-#benefits-physical > div,
-#benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -155,6 +152,7 @@ main {
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
@@ -166,36 +164,33 @@ main {
     justify-content: center;
 }
 
-/* Meet Up Times Section */
-
+/* Meetup Times section */
 #times {
-    background: url('../images/dublin-city.webp') no-repeat center / cover;
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+    /* Handles responsivity without the need for a media query */
     display: flex;
     flex-wrap: wrap;
 }
 
 #times div {
     color: #fafafa;
-    background-color: rgb(0,0,0,.6);
+    background-color: rgba(0, 0, 0, .6);
     padding: 15px;
     text-align: center;
-    /* This will not wrap on screens of less than 400px wide. 
-    Each div will expand to fill the avilable space on its row */
+    /* This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* Creates a grid of meetup time divs over th background image */
+    /* Creates a grid of meetup time divs over the background image */
     border: 2px solid white;
 }
 
-/* Override main h3 format */
 #times h3 {
+    /* Override the heading colour set in general styles */
     color: #fafafa;
-    padding: 15px;
-    text-align: center;
 }
 
-/* Gallery Page */
-
+/* Gallery page */
 #photos img {
     width: 100%;
     line-height: 1em;
@@ -220,8 +215,17 @@ main {
     color: #3a3a3a;
 }
 
-/* Media query tablets and larger */
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
         display: block;
@@ -235,7 +239,7 @@ main {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
@@ -254,12 +258,14 @@ main {
         /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
-    /* hero */
+
+    /* Hero */
     #cover-text {
         width: 300px;
         right: 50px;
     }
-    /* Reasons Section */
+
+    /* Reasons section */
     #benefits-physical,
     #benefits-mental {
         display: flex;
@@ -267,19 +273,31 @@ main {
         width: 100%;
     }
 
-    #benefits-physical >div,
-    #benefits-mental > div {
+    #benefits-physical>div,
+    #benefits-mental>div {
         width: 75%;
     }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
+    }
+
+    /* Gallery */
+    #photos {
+        column-count: 3;
+    }
 }
-}
+
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* Gallery */
+    #photos {
+        column-count: 4;
     }
 }
 
